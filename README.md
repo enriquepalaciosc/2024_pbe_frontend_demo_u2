@@ -1,8 +1,14 @@
-# React + Vite
+# Ejemplo conexión básica entre Frontend y Backend 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+El proyecto ha sido generado utilizando vite+reactjs+axios.
+Para ser utilizado en el proyecto "modelos" desde programación backend, segunda unidad 2024.
 
-Currently, two official plugins are available:
+Asegurarse que en settings.py del proyecto de backend tenga en listado blanco el servidor de vite:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://localhost:5174',
+    'http://localhost:5173' # añadir según corresponda
+)
+```
