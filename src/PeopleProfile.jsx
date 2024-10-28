@@ -24,9 +24,10 @@ function PeopleProfile() {
             fecha_nacimiento: "1994-05-15"
         };
 
+        // Con datos de ejemplo
         // setFormData(samplePerson);
 
-        // Cuando tengas tu API, usa esto:
+        // En uso de API
         const fetchPerson = async () => {
           try {
             const response = await axios.get(`http://127.0.0.1:8000/api/personas/perfil/${id}`);
