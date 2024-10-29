@@ -14,7 +14,7 @@ function PeopleAdd() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/api/personas', formData);
+            await axios.post('http://127.0.0.1:8000/api/personas/', formData);
             navigate('/personas');
         } catch (error) {
             console.error('Error al crear persona:', error);

@@ -43,7 +43,7 @@ function PeopleProfile() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`/api/personas/${id}`, formData);
+            await axios.put(`http://localhost:8000/api/personas/perfil/modificar/${id}`, formData);
             navigate('/personas');
         } catch (error) {
             console.error('Error al actualizar persona:', error);
@@ -57,6 +57,15 @@ function PeopleProfile() {
             [name]: type === 'checkbox' ? checked : value
         }));
     };
+
+    const handleDelete = async () => {
+        try {
+            await axios.delete(`http://localhost:8000/api/personas/perfil/modificar/${id}`);
+            navigate('/personas');
+        } catch (error) {
+            console.error('Error al actualizar persona:', error);
+        }
+    }
 
     return (
         <div className="row">
@@ -124,6 +133,9 @@ function PeopleProfile() {
                     <div className="d-flex gap-2">
                         <button type="submit" className="btn btn-primary">
                             Guardar Cambios
+                        </button>
+                        <button className="btn btn-outline-danger" onClick={handleDelete}>
+                            Eliminar perfil de persona
                         </button>
                         <button
                             type="button"
